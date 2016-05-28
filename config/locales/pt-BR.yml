@@ -1,4 +1,7 @@
 pt-BR:
+  
+  confirmations:
+    success: Email confirmado com sucesso, obrigado! 
   activerecord:
     models:
       room: Quarto
