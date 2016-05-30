@@ -1,0 +1,1 @@
+Colchonet::Application.config.secret_key_base ='d2eb2a03504cdeca326ed19ad7ef392fd3d02188bb84ad3a018cddec4d861b46439ee8847da35fe7be6be4ca8f6d568c406598a976e314f162e78cfb16415f79'

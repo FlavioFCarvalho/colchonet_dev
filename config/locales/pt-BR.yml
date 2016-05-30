@@ -14,6 +14,7 @@ pt-BR:
         location: Localização
         password: Senha
         password_confirmation: Confirme sua senha
+        
       room:
         description: Descrição
         location: Localização
@@ -30,4 +31,40 @@ pt-BR:
       confirm_link_html: 'Para você começar a usar o site, acesse o
         link: %{link}'
       thanks_html: 'Obrigado por se cadastrar no %{link}.'
-  links:      
+  links:    
+
+  show:
+    edit: 'Editar perfil'
+    title: "Perfil: %{user_name}"
+    location: "Localização: %{location}"
+    bio: "Bio: %{bio}" 
+
+  
+  user_sessions:
+    new:
+      title: 'Login'
+      sign_up: 'Cadastre-se'
+  
+  signup:
+     confirm_email:  
+
+  
+  room:
+    description: Descrição
+    location: Localização
+    title: Título
+
+# Adicione:
+activemodel:
+  attributes:
+    user_session:
+      email: Email
+      password: Senha
+
+  errors:
+    messages:
+      invalid_login: 'Usuário ou senha inválidos'
+helpers:
+  submit:
+    user_session:
+      create: 'Entrar'    
