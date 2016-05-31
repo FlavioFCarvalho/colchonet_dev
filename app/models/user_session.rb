@@ -24,5 +24,13 @@ class UserSession
 	def store(user)
 		@session[:user_id] = user.id
 	end
+    #Busca o usuário ma sessão 
+	def current_user
+		User.find(@session[:user_id])
+	end
+	#Verifica se a sessão do usuário é válida
+	def user_signed_in?
+		@session[:user_id].present?
+	end
 
 end
