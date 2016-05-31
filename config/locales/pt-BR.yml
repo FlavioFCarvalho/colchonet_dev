@@ -67,4 +67,12 @@ activemodel:
 helpers:
   submit:
     user_session:
-      create: 'Entrar'    
+      create: 'Entrar'  
+
+layout:
+    rooms: Quartos
+    new_room: Cadastre seu quarto!
+    signup: Cadastro
+    signin: Login
+    my_profile: Meu perfil
+    signout: Logout       
