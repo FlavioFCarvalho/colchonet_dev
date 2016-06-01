@@ -13,7 +13,8 @@ class UserSessionsController < ApplicationController
 		end
 	end
 	def destroy
-		# Ainda não :-)
+		user_session.destroy
+			redirect_to root_path, notice: t('flash.notice.signed_out')
 	end
 
 	

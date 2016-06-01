@@ -33,4 +33,8 @@ class UserSession
 		@session[:user_id].present?
 	end
 
+	def destroy
+		@session[:user_id] = nil
+	end
+
 end
