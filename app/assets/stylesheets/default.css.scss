@@ -13,11 +13,10 @@ $success-text-color: #468847;
 	font-size: 14px;
 }
 
-@mixin shadow($color,$x, $y, $radius) {
--moz-box-shadow: $color $x $y $radius;
--webkit-box-shadow: $color $x $y $radius;
-box-shadow: $color $x $y $radius;
-}
+@import "shadow";
+
+$header-height: 55px;
+$content-width: 700px;
 
 
 
