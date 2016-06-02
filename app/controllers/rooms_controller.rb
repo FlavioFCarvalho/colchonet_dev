@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms
   # GET /rooms.json
+  #mostra os quartos mais recentes
   def index
     @rooms = Room.all 
   end
@@ -16,19 +17,19 @@ class RoomsController < ApplicationController
 
   # GET /rooms/new
   def new
-    @room = Room.new
+    @room = current_user.rooms.build
   end
 
   # GET /rooms/1/edit
   def edit
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
 
   end
 
   # POST /rooms
   # POST /rooms.json
   def create
-    @room = Room.new(room_params)
+    @room = current_user.rooms.build(room_params)
   
     if @room.save
         redirect_to @room, notice: t('flash.notice.room_created')
@@ -41,7 +42,7 @@ class RoomsController < ApplicationController
   # PATCH/PUT /rooms/1.json
   def update
 
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
 
       if @room.update(room_params)
         redirect_to @room, notice: t('flash.notice.room_updated')
@@ -53,7 +54,7 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1
   # DELETE /rooms/1.json
   def destroy
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
     @room.destroy
 
     redirect_to rooms_url
@@ -67,11 +68,10 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
    def room_params
-     params.require(:room).permit(:title, :location, :description, :user_id)
+     params.
+        require(:room).
+        permit(:title, :location, :description)
    end
-  
-
-  
-end
+ end
  
 
