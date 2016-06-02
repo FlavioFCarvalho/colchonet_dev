@@ -100,4 +100,6 @@ pt-BR:
       edit: 'Editar'
       destroy: 'Remover' 
 
-      
+  home:
+    index:
+      title: Quartos       
