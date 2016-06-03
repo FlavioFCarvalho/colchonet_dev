@@ -1,11 +1,13 @@
 class CreateReviews < ActiveRecord::Migration
   def change
     create_table :reviews do |t|
-      t.references :user, index: true, foreign_key: true
-      t.references :room, index: true, foreign_key: true
+      t.belongs_to :user
+	  t.belongs_to :room
       t.integer :points
 
-      t.timestamps null: false
+      t.index [:user_id, :room_id], unique: true
+
+      t.timestamps 
     end
   end
 end
