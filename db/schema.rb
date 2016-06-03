@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603163441) do
+ActiveRecord::Schema.define(version: 20160603165555) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(version: 20160603163441) do
   add_index "reviews", ["user_id", "room_id"], name: "index_reviews_on_user_id_and_room_id", unique: true, using: :btree
 
   create_table "rooms", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.string   "location",    limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "user_id",     limit: 4
+    t.string   "title",         limit: 255
+    t.string   "location",      limit: 255
+    t.text     "description",   limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "user_id",       limit: 4
+    t.integer  "reviews_count", limit: 4
   end
 
   add_index "rooms", ["user_id"], name: "index_rooms_on_user_id", using: :btree
