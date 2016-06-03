@@ -1,4 +1,5 @@
 class Room < ActiveRecord::Base
+	has_many :reviews
     belongs_to :user
     
     def complete_name
