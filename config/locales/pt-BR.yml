@@ -6,6 +6,7 @@ pt-BR:
     models:
       room: Quarto
       user: Usuário
+      review: Avaliação
     attributes:
       user:
         bio: Biografia
