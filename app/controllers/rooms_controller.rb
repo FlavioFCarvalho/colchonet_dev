@@ -7,6 +7,7 @@ class RoomsController < ApplicationController
   #mostra os quartos mais recentes
   def index
     @rooms = Room.all 
+    #@rooms = Room.most_recent
   end
 
   # GET /rooms/1
@@ -22,14 +23,12 @@ class RoomsController < ApplicationController
   # GET /rooms/1/edit
   def edit
     @room = current_user.rooms.find(params[:id])
-
   end
 
   # POST /rooms
   # POST /rooms.json
   def create
     @room = current_user.rooms.build(room_params)
-  
     if @room.save
         redirect_to @room, notice: t('flash.notice.room_created')
     else
@@ -40,9 +39,7 @@ class RoomsController < ApplicationController
   # PATCH/PUT /rooms/1
   # PATCH/PUT /rooms/1.json
   def update
-
-    @room = current_user.rooms.find(params[:id])
-
+      @room = current_user.rooms.find(params[:id])
       if @room.update(room_params)
         redirect_to @room, notice: t('flash.notice.room_updated')
       else
@@ -53,17 +50,17 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1
   # DELETE /rooms/1.json
   def destroy
-    @room = current_user.rooms.find(params[:id])
-    @room.destroy
+     @room = current_user.rooms.find(params[:id])
+     @room.destroy
 
     redirect_to rooms_url
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-   def set_room
-      @room = Room.find(params[:id])
-    end
+   #def set_room
+    #  @room = Room.find(params[:id])
+   #end
 
     # Never trust parameters from the scary internet, only allow the white list through.
    def room_params
